@@ -1,0 +1,59 @@
+ <mvc:View xmlns:layout="sap.ui.layout" controllerName="com.appIdeas.appIdeas.controller.Wordfrequency"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+
+   <Page title="{i18n>titleWordFrequency}"
+         showNavButton="true"
+         navButtonPress="onNavBack">
+         
+         <FlexBox justifyContent="Center" alignItems="Center" direction="Column" renderType="Bare">
+            
+            <FlexBox width="75%" class="sapUiResponsiveMargin" alignContent="Stretch" justifyContent="Start">
+                <Title text="Insert some  to calculate..." level="H2" titleStyle="H2"></Title>
+            </FlexBox>
+            <TextArea id="textArea" growing="true" rows="15" width="75%" class="sapUiResponsiveMargin" />
+            
+            <FlexBox width="75%" class="sapUiResponsiveMargin" alignContent="Stretch" justifyContent="End">
+                <CheckBox text="Case Sensitive" id="caseSensitiveId" class="sapUiMediumMarginEnd"></CheckBox>
+                <Button text="Clear" press=".onClear" class="sapUiSmallMarginEnd"></Button>
+                <Button text="Translate" press=".onTranslate"></Button>
+            </FlexBox>
+            
+            <Table id="translatedText" 
+                class="sapUiResponsiveMargin"
+                width="75%" 
+                visible="true"
+                items="{
+                    path:'/wordFrequency'
+                }"
+                >
+                <columns>
+                    <Column minScreenWidth="Small" id="frequencyId">
+                        <Label labelFor="frequencyId"
+                            design="Bold"
+                            text="Frequency"
+                            wrapping="true"
+                        />
+                    </Column>
+                    <Column id="wordId">
+                        <Label labelFor="wordId"
+                            design="Bold"
+                            text="Word"
+                            wrapping="true"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <ObjectNumber number="{frequency}"/>
+                            <ObjectIdentifier text="{word}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </FlexBox>
+         
+   </Page>
+</mvc:View>

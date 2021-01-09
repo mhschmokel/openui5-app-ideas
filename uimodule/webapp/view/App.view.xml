@@ -1,0 +1,8 @@
+ <mvc:View controllerName="com.appIdeas.appIdeas.controller.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+    
+    <App id="idAppControl"/>
+
+</mvc:View>

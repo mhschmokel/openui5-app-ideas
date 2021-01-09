@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core" >
+    <Dialog
+        id="foodDialog"
+        title="{/strMeal}">
+
+        <content>
+            
+            <FlexBox class="sapUiResponsiveMargin" direction="Column" 
+                     justifyContent="Center" >
+
+                <FlexBox direction="Column" fitContainer="false" alignContent="Start" alignItems="Start">
+                
+                    <Image class="image sapUiMediumMargin" src="{/strMealThumb}"></Image>
+
+                    <FlexBox class="sapUiMediumMargin" 
+                            direction="Column" 
+                            justifyContent="Start" 
+                            alignItems="Start"
+                            alignContent="Stretch">
+
+                        <Label design="Bold" text="Ingredients:" wrapping="true"/>
+                        
+                        <Panel content="{/strMeasureIngredients}" >
+                            <content>
+                                <FlexBox renderType="List">
+                                    <Text text="{measure} {ingredient}"/>
+                                </FlexBox>
+                            </content>
+                        </Panel>
+                    </FlexBox>
+                </FlexBox>
+            
+                
+
+                <FlexBox class="sapUiResponsiveMargin" direction="Column">
+                    <Label design="Bold" text="Instructions:" wrapping="true"/>
+                    <Text class="instructionText" text="{/strInstructions}"></Text>
+                </FlexBox>
+            
+
+
+            </FlexBox>
+            
+        </content>
+
+        <beginButton>
+            <Button
+                text="Close"
+                press=".onCloseFoodDialog"/>
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

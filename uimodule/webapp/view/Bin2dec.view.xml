@@ -1,0 +1,24 @@
+ <mvc:View xmlns:layout="sap.ui.layout" controllerName="com.appIdeas.appIdeas.controller.Bin2dec"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+
+   <Page title="{i18n>titleBin2Dec}"
+         showNavButton="true"
+         navButtonPress="onNavBack">
+
+         <FlexBox class="sapUiResponsiveMargin" direction="Column">
+            <Title titleStyle="H2" level="H2" text="Binary to Decimal Conversor"></Title>
+            <FlexBox alignItems="Center" class="sapUiResponsiveMargin">
+                  <Input class="sapUiSmallMarginEnd"
+                        valueLiveUpdate="true"
+                        liveChange="onConvertBin2Dec" 
+                        placeholder="Insert a binary number"/>
+                        
+                  <FormattedText class="sapUiSmallMargin" 
+                              htmlText="{/converted/dec}"/>
+            </FlexBox>
+         </FlexBox>
+         
+   </Page>
+</mvc:View>

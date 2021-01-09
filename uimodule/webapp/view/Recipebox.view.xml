@@ -1,0 +1,24 @@
+ <mvc:View xmlns:layout="sap.ui.layout" controllerName="com.appIdeas.appIdeas.controller.Recipebox"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+
+   <Page title="{i18n>titleRecipeBox}"
+         showNavButton="true"
+         navButtonPress="onNavBack">
+
+    <FlexBox class="sapUiResponsiveMargin" renderType="Bare" justifyContent="Center">
+        <List headerText="Select a food category"
+              items="{foodCategories>/meals}"
+              >
+
+              <items>
+                <ObjectListItem type="Navigation" press=".onNavCategory" title="{foodCategories>strCategory}"></ObjectListItem>
+              </items>
+        </List>
+    </FlexBox>
+
+         
+
+   </Page>
+</mvc:View>

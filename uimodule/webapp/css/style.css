@@ -1,0 +1,12 @@
+/* Enter your custom styles here */
+.instructionText {
+    margin-top: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.image{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    max-width: 50%;
+}

@@ -1,0 +1,38 @@
+ <mvc:View xmlns:layout="sap.ui.layout" controllerName="com.appIdeas.appIdeas.controller.Weatherapp"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+
+   <Page title="{i18n>titleWeatherApp}"
+         showNavButton="true"
+         navButtonPress="onNavBack">
+         
+        <FlexBox class="sapUiResponsiveMargin" renderType="Bare" justifyContent="Center">
+            <Input class="sapUiSmallMarginEnd" id="cityNameId" width="50%" type="Text"></Input>
+            <Button text="Search" press=".onSearch"></Button>
+        </FlexBox>
+
+        <FlexBox class="sapUiResponsiveMargin" 
+                 renderType="Bare" 
+                 justifyContent="Center" 
+                 visible="false"
+                 id="listBoxId"
+                 >
+            <List id="cityListId" 
+                  width="75%" 
+                  headerText="Select a City" 
+                  items="{/}"
+                  >
+
+                <items>
+                    <ObjectListItem type="Active" intro="{key}" press=".onSelectCity" title="{localizedName}, {stateId}, {countryName}"/>
+                </items>
+            </List>
+        </FlexBox>
+
+        <FlexBox class="sapUiResponsiveMargin" id="weatherBoxId" visible="true">
+            <Text text="Temperature:"></Text>
+            <Text text="{/temperature/value}"></Text>
+        </FlexBox>
+   </Page>
+</mvc:View>

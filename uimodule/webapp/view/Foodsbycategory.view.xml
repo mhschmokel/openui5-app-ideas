@@ -1,0 +1,24 @@
+ <mvc:View xmlns:layout="sap.ui.layout" controllerName="com.appIdeas.appIdeas.controller.Foodsbycategory"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+
+   <Page title="{/strCategory}"
+         showNavButton="true"
+         navButtonPress="onNavBack">
+
+    <FlexBox class="sapUiResponsiveMargin" renderType="Bare" justifyContent="Center">
+        <List headerText="Select a food" 
+              id="foodListId"
+              items='{/meals}'>
+
+              <items>
+                <ObjectListItem type="Navigation" press=".onOpenFoodDialog" title="{strMeal}" icon="{strMealThumb}" intro="{idMeal}"></ObjectListItem>
+              </items>
+        </List>
+    </FlexBox>
+
+         
+
+   </Page>
+</mvc:View>

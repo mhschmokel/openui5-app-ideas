@@ -1,0 +1,26 @@
+ <mvc:View controllerName="com.appIdeas.appIdeas.controller.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Shell backgroundColor="#eee">
+    <App id="idAppControl" >
+      <pages>
+        <Page title="{i18n>title}">
+          <content>
+            <List 
+              headerText="T1 - Beginner"
+              class="sapUiResponsiveMargin"
+              width="auto">
+              <items>
+                <DisplayListItem label="Bin 2 Dec" type="Navigation" press=".onPress($event, 'bin2dec')"></DisplayListItem>
+                <DisplayListItem label="Recipe Box" type="Navigation" press=".onPress($event, 'recipebox')"></DisplayListItem>
+                <DisplayListItem label="Weather App" type="Navigation" press=".onPress($event, 'weatherapp')"></DisplayListItem>
+                <DisplayListItem label="Word Frequency" type="Navigation" press=".onPress($event, 'wordfrequency')"></DisplayListItem>
+              </items>
+            </List>
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
+</mvc:View>
